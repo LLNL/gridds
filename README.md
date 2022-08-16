@@ -16,7 +16,7 @@ Author(s): Alexander Ladd & Indrasis Chakraborty
 - See `examples/simple_interpolate` for an introduction on how to run **interpolation**
 - See `examples/simple_fault_detect` for an introduction on how to run **fault detection**
 
-
+```
 ├── RNN_univariate_nrel.db
 ├── __init__.py
 ├── data
@@ -113,7 +113,7 @@ Author(s): Alexander Ladd & Indrasis Chakraborty
     ├── viz.py
     └── viz_extension.py
 
-
+```
 
 
 
