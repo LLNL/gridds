@@ -16,6 +16,17 @@ Author(s): Alexander Ladd & Indrasis Chakraborty
 - See `examples/simple_interpolate` for an introduction on how to run **interpolation**
 - See `examples/simple_fault_detect` for an introduction on how to run **fault detection**
 
+
+## Research
+
+- Our previous work can be found here: [gridds: A Data Science Toolkit for Energy Grid Machine
+Learning](https://dl.acm.org/doi/abs/10.1145/3538637.3539614)
+    - DOI: 10.1145/3538637.3539614
+
+- And here: [End-to-End Framework for Imputation and State Discovery
+in Longitudinal Energy Data](https://dl.acm.org/doi/pdf/10.1145/3447555.3466588)
+    - DOI: 10.1145/3447555.3466588
+
 ## Code Structure
 
 ```
