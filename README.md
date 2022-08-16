@@ -10,11 +10,13 @@ Author(s): Alexander Ladd & Indrasis Chakraborty
 - Conda Env
     - `conda install gridds.yml`
     
-    
+
 ## Quick start
 - See `examples/simple_autoregression` for an introduction on how to run **autoregression**
 - See `examples/simple_interpolate` for an introduction on how to run **interpolation**
 - See `examples/simple_fault_detect` for an introduction on how to run **fault detection**
+
+## Code Structure
 
 ```
 ├── RNN_univariate_nrel.db
