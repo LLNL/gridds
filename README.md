@@ -1,4 +1,4 @@
-# GridDS: Data Science Toolkit for Energy Grid Data (GridDS), Version 1.0
+# GridDS: Data Science Toolkit for Energy Grid Data (GridDS), Version 0.0.1
 
 Author(s): Alexander Ladd & Indrasis Chakraborty
 
