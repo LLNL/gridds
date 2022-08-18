@@ -1,5 +1,7 @@
 # GridDS: Data Science Toolkit for Energy Grid Data (GridDS), Version 0.0.1
 
+[![Python Package using Conda](https://github.com/LLNL/gridds/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/LLNL/gridds/actions/workflows/python-package-conda.yml)
+
 Author(s): Alexander Ladd & Indrasis Chakraborty
 
 
