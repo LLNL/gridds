@@ -58,5 +58,4 @@ test-python-CZ:
     - quartz
     - shell
   stage: build
-  extends: [ .test-python-unittests, .CZ-job ]
 
