@@ -47,3 +47,16 @@ deploy-job:      # This job runs in the deploy stage.
   script:
     - echo "Deploying application..."
     - echo "Application successfully deployed."
+
+
+.CZ-job:
+  rules:
+    - if: '$LC_ZONE == "CZ"'
+
+test-python-CZ:
+  tags:
+    - quartz
+    - shell
+  stage: build
+  extends: [ .test-python-unittests, .CZ-job ]
+
