@@ -156,4 +156,4 @@ widgetsnbextension
 wrapt==1.12.1
 xgboost
 xlrd
-zipp==3.8.1
+zipp
