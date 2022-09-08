@@ -30,7 +30,7 @@ ffmpeg==1.4
 Fiona==1.8.20
 frictionless==4.16.6
 future==0.18.2
-geopandas==0.10.2
+geopandas
 # Editable install with no version control (gridds==0.0.1)
 h5py==3.4.0
 imagesize==1.4.1
