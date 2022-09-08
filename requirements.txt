@@ -3,17 +3,14 @@ appnope==0.1.2
 argon2-cffi==21.1.0
 attrs==21.2.0
 autodoc==0.5.0
-awscli @ file:///Users/runner/miniforge3/conda-bld/awscli_1646449314394/work
 Babel==2.10.3
 backcall==0.2.0
 backports.zoneinfo==0.2.1
 beautifulsoup4==4.11.1
 bleach==4.1.0
-botocore @ file:///home/conda/feedstock_root/build_artifacts/botocore_1646438083893/work
 brotlipy==0.7.0
 celluloid==0.2.0
 certifi==2022.6.15
-cffi @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/croot-2p6q7e2r/cffi_1642701115063/work
 chardet==4.0.0
 charset-normalizer==2.0.4
 chart-studio==1.1.0
@@ -22,12 +19,10 @@ click-plugins==1.1.1
 cligj==0.7.2
 colorama==0.4.4
 commonmark==0.9.1
-cryptography @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b470f7cb-c8f1-42c9-b84f-23789ea77e7c9difcqh4/croots/recipe/cryptography_1652101134392/work
 cycler==0.10.0
 debugpy==1.4.1
 decorator==5.0.9
 defusedxml==0.7.1
-docutils @ file:///Users/runner/miniforge3/conda-bld/docutils_1637960641879/work
 dss-python==0.10.7.post1
 entrypoints==0.3
 et-xmlfile==1.1.0
@@ -37,9 +32,7 @@ frictionless==4.16.6
 future==0.18.2
 geopandas==0.10.2
 # Editable install with no version control (gridds==0.0.1)
--e /Users/ladd12/gmlc
 h5py==3.4.0
-idna @ file:///tmp/build/80754af9/idna_1637925883363/work
 imagesize==1.4.1
 importlib-metadata==4.12.0
 iniconfig==1.1.1
@@ -51,7 +44,6 @@ ipywidgets==7.6.4
 isodate==0.6.0
 jedi==0.18.0
 Jinja2==3.0.1
-jmespath @ file:///Users/ktietz/demo/mc3/conda-bld/jmespath_1630583964805/work
 joblib==1.1.0
 jsonschema==3.2.0
 jupyter==1.0.0
@@ -102,19 +94,14 @@ psycopg2==2.9.1
 ptyprocess==0.7.0
 py==1.11.0
 pyarrow==5.0.0
-pyasn1 @ file:///Users/ktietz/demo/mc3/conda-bld/pyasn1_1629708007385/work
 pybtex==0.24.0
 pybtex-docutils==1.0.2
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 Pygments==2.10.0
-pyOpenSSL @ file:///opt/conda/conda-bld/pyopenssl_1643788558760/work
 pyparsing==2.4.7
 pyproj==3.3.0
 pyrsistent==0.18.0
 pyshp==2.1.3
-PySocks @ file:///opt/concourse/worker/volumes/live/85a5b906-0e08-41d9-6f59-084cee4e9492/volume/pysocks_1594394636991/work
 pytest==7.1.3
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 python-slugify==5.0.2
 pytz==2021.1
 PyYAML==5.4.1
@@ -125,8 +112,6 @@ recommonmark==0.7.1
 requests==2.26.0
 retrying==1.3.3
 rfc3986==1.5.0
-rsa @ file:///tmp/build/80754af9/rsa_1614366226499/work
-s3transfer @ file:///tmp/build/80754af9/s3transfer_1626435152308/work
 scikit-learn==1.0.1
 scipy==1.7.1
 seaborn==0.11.2
@@ -134,7 +119,7 @@ Send2Trash==1.8.0
 Shapely==1.8.0
 shellingham==1.4.0
 simpleeval==0.9.10
-six @ file:///tmp/build/80754af9/six_1644875935023/work
+six
 snowballstemmer==2.2.0
 soupsieve==2.3.2.post1
 Sphinx==5.1.1
@@ -161,7 +146,7 @@ traitlets==5.1.0
 typer==0.4.0
 typing-extensions==3.10.0.2
 typing-inspect==0.7.1
-urllib3 @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_92f3a881-8cf4-469b-8319-736ffa3c6d61ordl4zjw/croots/recipe/urllib3_1650639998913/work
+urllib3
 validators==0.18.2
 waitress==2.1.2
 wcwidth==0.2.5
