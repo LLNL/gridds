@@ -31,6 +31,8 @@ install-deps:       # This job runs in the build stage, which runs first.
   stage: install
   script:
     - echo "Compiling the code..."
+    - echo "using python:" `which python`
+    - pip install --upgrade pip
     - pip install -r requirements.txt
     - echo "Compile complete."
 
