@@ -1,7 +1,15 @@
  
  
-    
-    
+
+def test_always_passes():
+    assert True
+
+def test_i_always_passes():
+    assert True
+
+def test_g_always_passes():
+    assert True
+
 # test case
 # ami_df[ami_df['start_time'] == pd.to_datetime('2019-07-30 20:00:00')]['start_time'].values <  oms_df[oms_df['customers_affected'] == '583']['start_time'].values
     
