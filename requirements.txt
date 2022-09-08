@@ -144,6 +144,7 @@ tqdm==4.64.0
 typer==0.4.0
 typing-extensions==3.10.0.2
 typing-inspect==0.7.1
+traitlets>=5
 urllib3
 validators==0.18.2
 waitress
