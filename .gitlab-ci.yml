@@ -23,9 +23,16 @@ default:
 
 
 stages:          # List of stages for jobs, and their order of execution
+  - load
   - install
   - test
   - deploy
+
+load-lc:
+  stage: load
+  tags: ['catalyst']
+  script:
+    - module load python/3.8.2
 
 install-deps:       # This job runs in the build stage, which runs first.
   stage: install
