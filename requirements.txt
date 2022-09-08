@@ -32,7 +32,7 @@ frictionless==4.16.6
 future==0.18.2
 geopandas
 # Editable install with no version control (gridds==0.0.1)
-h5py==3.4.0
+h5py
 imagesize==1.4.1
 importlib-metadata==4.12.0
 iniconfig==1.1.1
