@@ -42,8 +42,8 @@ install-deps:       # This job runs in the build stage, which runs first.
     - python3 -m venv test_env
     - source test_env/bin/activate
     - echo "using python:" `which python3` "and version:" `python3 --version` 
-    - python3 -m pip install --upgrade pip --user
-    - python3 -m pip install -r requirements.txt --user
+    - python3 -m pip install --upgrade pip
+    - python3 -m pip install -r requirements.txt
     - echo "Compile complete."
 
 unit-test-job:   # This job runs in the test stage.
