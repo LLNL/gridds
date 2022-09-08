@@ -23,14 +23,15 @@ default:
 
 
 stages:          # List of stages for jobs, and their order of execution
-  - build
+  - install
   - test
   - deploy
 
-build-job:       # This job runs in the build stage, which runs first.
-  stage: build
+install-deps:       # This job runs in the build stage, which runs first.
+  stage: install
   script:
     - echo "Compiling the code..."
+    - pip instll
     - echo "Compile complete."
 
 unit-test-job:   # This job runs in the test stage.
