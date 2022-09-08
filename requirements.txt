@@ -147,13 +147,13 @@ typing-extensions==3.10.0.2
 typing-inspect==0.7.1
 urllib3
 validators==0.18.2
-waitress==2.1.2
+waitress
 wcwidth==0.2.5
 webencodings==0.5.1
 WebOb==1.8.7
 WebTest==3.0.0
-widgetsnbextension==3.5.1
+widgetsnbextension
 wrapt==1.12.1
-xgboost==1.6.0
-xlrd==2.0.1
+xgboost
+xlrd
 zipp==3.8.1
