@@ -27,5 +27,7 @@ jobs:
     - name:  test
       run: |
         echo "running tests...."
+        echo "from" `pwd`
+        echo "with" `ls`
         python3 -m pytest  -v test/tests.py
   
