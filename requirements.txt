@@ -75,7 +75,6 @@ openpyxl
 packaging==21.3
 pandas
 pandera
-pandoc
 pandocfilters==1.4.3
 parso==0.8.2
 patsy==0.5.2
