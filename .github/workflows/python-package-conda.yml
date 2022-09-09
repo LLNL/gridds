@@ -29,5 +29,5 @@ jobs:
     - name:  test
       run: |
         echo "running tests...."
-        pytest  -v test/tests.py 
+        python3 -m pytest  -v test/tests.py
   
