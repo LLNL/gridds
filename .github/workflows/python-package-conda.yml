@@ -21,8 +21,6 @@ jobs:
     - name: install
       run: | 
         echo "Compiling the code..."
-        python3 -m venv test_env
-        source test_env/bin/activate
         echo "using python:" `which python3` "and version:" `python3 --version` 
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
