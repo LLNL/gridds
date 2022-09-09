@@ -10,7 +10,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: docker://pandoc/core:2.9
     - name: Set up Python 3.8.5
       uses: actions/setup-python@v3
       with:
@@ -26,6 +25,7 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
     - name:  docs
+      uses: docker://pandoc/core:2.9
       run: |
         cd docs
         echo "cleaning docs...."
