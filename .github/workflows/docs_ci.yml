@@ -28,7 +28,6 @@ jobs:
       run: |
         conda install -c conda-forge pandoc
     - name:  docs
-      uses: docker://pandoc/core:2.9
       run: |
         cd docs
         echo "cleaning docs...."
