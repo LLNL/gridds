@@ -3,7 +3,7 @@ import abc
 from abc import ABCMeta, abstractmethod
 import numpy as np
 import os
-from gridds.tools.metrics import *
+from .metrics import mae,rmse, binary_crossentropy
 
 
 

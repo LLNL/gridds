@@ -1,5 +1,5 @@
 # from .ddcrf import ddcrf
-from .matrix_profile import matrix_profile
+# from .matrix_profile import matrix_profile
 from .arima import ARIMA
 from .RNN import VanillaRNN
 from .LSTM import LSTM
@@ -12,7 +12,7 @@ from .random_forest import RandomForest
 from .gaussian_process import GP
 
 
-all = ['matrix_profile',
+all = [ #'matrix_profile',
         # 'ddcrf',
         'ARIMA',
         'VanillaRNN',
