@@ -23,11 +23,11 @@ RNN
     :show-inheritance:
     :members:
     
-DDCRF
---------
-.. automodule:: gridds.methods.ddcrf
-    :show-inheritance:
-    :members:
+.. DDCRF
+.. --------
+.. .. automodule:: gridds.methods.ddcrf
+..     :show-inheritance:
+..     :members:
 
 VAE
 --------
@@ -35,8 +35,8 @@ VAE
     :show-inheritance:
     :members:
 
-XGBoost
----------
-.. automodule:: gridds.methods.XGBoost
-    :show-inheritance:
-    :members:
+.. XGBoost
+.. ---------
+.. .. automodule:: gridds.methods.XGBoost
+..     :show-inheritance:
+..     :members:
