@@ -1,4 +1,4 @@
-from .ddcrf import ddcrf
+# from .ddcrf import ddcrf
 from .matrix_profile import matrix_profile
 from .arima import ARIMA
 from .RNN import VanillaRNN
@@ -13,7 +13,7 @@ from .gaussian_process import GP
 
 
 all = ['matrix_profile',
-        'ddcrf',
+        # 'ddcrf',
         'ARIMA',
         'VanillaRNN',
         'LSTM',
