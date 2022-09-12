@@ -16,7 +16,6 @@ from matplotlib.ticker import FormatStrFormatter
 matplotlib.rcParams.update({'figure.autolayout': True})
 from abc import ABCMeta, abstractmethod
 import numpy as np
-from ddcrf.run_ddcrf import run_ddcrf
 import gridds.tools.utils as utils
 from sklearn import preprocessing
 from gridds.data.db_interface import DbObject
