@@ -5,6 +5,13 @@ Methods
     :show-inheritance:
     :members:
 
+ARIMA
+--------
+.. automodule:: gridds.methods.ARIMA
+    :show-inheritance:
+    :members:
+
+
 KNN
 --------
 .. automodule:: gridds.methods.KNN
