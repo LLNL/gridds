@@ -24,6 +24,7 @@ jobs:
         echo "using python:" `which python3` "and version:" `python3 --version` 
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
+        python3 setup.py install
     - name: install_pandoc
       run: |
         conda install -c conda-forge pandoc
