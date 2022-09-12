@@ -5,6 +5,23 @@ import numpy as np
 from .base_model import BaseModel
 
 class ARIMA(BaseModel):
+    r"""
+    \arima{} is parameterized by $p$, the number of autoregressive terms, $d$,
+     the number of differences needed for stationarity and $q$,
+      the number of lagged forecast errors in the forecasting 
+      equation: 
+      $\hat{x_t} = \alpha + \beta_1 x_{t-1} +...+ \beta_p x_{t-p} - \beta_1 e_{t-1} - \beta_q e_{t-q}$ 
+      where $\beta$ represent autoregressive terms, $\theta$ represent
+       moving average terms, and $\alpha$ is a bias/intercept term. 
+       Potential uses include autoregression, imputation, and fault detection.
+    :param str name: generic name to save and load this model.
+    :param int p: number of autoregressive terms $x_{t-1} + ... + x_{t-p}$
+    :param int d: differencing factor between autoregressive terms and moving average terms. 
+    :param int q: number of moving average terms. $q$ in the equation above.
+
+    base implementation from `statsmodels.tsa.arima.model.arima <https://www.statsmodels.org/devel/generated/statsmodels.tsa.arima.model.ARIMA.html>`_
+
+    """
     def __init__(self, name, p=5,d=1,q=0 ):
         super(ARIMA, self).__init__(name)
         self.name = name
@@ -12,7 +29,7 @@ class ARIMA(BaseModel):
         self.d = d
         self.q = q
 
-    def fit_transform(self,X,**kwargs):
+    def fit_transform(self,X,**kwargs):        
         print('univariate for now')
         # model=sm_ARIMA(site_data[:,0],order=(1,1,1))
         preds = []

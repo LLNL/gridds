@@ -5,19 +5,18 @@ import copy
 
 class BaseModel(object):
     """ 
-    Abstract class representing a generic GP 
+    Abstract class representing a generic GP
+
+    Class initialization.
+        Args
+            :attr:`name` (string):
+            the name attribute of the method.
+        TODO: add more generic args? 
     
     """
     __metaclass__ = ABCMeta
 
     def __init__(self, name):  # , full_name):
-        """
-        Class initialization.
-        Args
-            :attr:`name` (string):
-            the name attribute of the method.
-        TODO: add more generic args?
-        """
         self.name = name
         self.multivariate = False
         self.loss = []
