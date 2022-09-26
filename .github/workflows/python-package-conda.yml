@@ -18,6 +18,10 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
+    - name: add codecov
+      run: |
+        curl -Os https://uploader.codecov.io/latest/linux/codecov
+        chmod +x codecov
     - name: install
       run: | 
         echo "Compiling the code..."
@@ -30,4 +34,7 @@ jobs:
         echo "from" `pwd`
         echo "with" `ls`
         python3 -m pytest  -v test/tests.py
+        # run code cov
+        ./codecov
+
   
