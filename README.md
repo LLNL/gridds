@@ -2,7 +2,7 @@
 
 [![Python Package using Conda](https://github.com/LLNL/gridds/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/LLNL/gridds/actions/workflows/python-package-conda.yml) 
 [![Documentation Status](https://readthedocs.org/projects/gridds/badge/?version=latest)](https://gridds.readthedocs.io/en/latest/?badge=latest)
-
+[![codecov](https://codecov.io/gh/LLNL/gridds/branch/public_091422/graph/badge.svg?token=912YRWCMVZ)](https://codecov.io/gh/LLNL/gridds)
 
 Author(s): Alexander Ladd & Indrasis Chakraborty
 
