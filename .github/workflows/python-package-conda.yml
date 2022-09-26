@@ -33,9 +33,8 @@ jobs:
         echo "running tests...."
         echo "from" `pwd`
         echo "with" `ls`
-        python3 -m pytest  -v test/tests.py
+        python3 -m pytest --cov  -v test/tests.py
         # run code cov
-        pytest --cov .
         ./codecov ${CODECOV_TOKEN}
 
   
