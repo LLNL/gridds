@@ -105,6 +105,7 @@ python-slugify==5.0.2
 pytz==2021.1
 PyYAML==5.4.1
 pyzmq==22.2.1
+pytest-cov==3.0.0
 qtconsole==5.1.1
 QtPy==1.11.0
 recommonmark==0.7.1
