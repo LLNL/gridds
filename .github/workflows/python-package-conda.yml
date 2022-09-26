@@ -35,6 +35,7 @@ jobs:
         echo "with" `ls`
         python3 -m pytest  -v test/tests.py
         # run code cov
-        ./codecov
+        pytest --cov .
+        ./codecov ${CODECOV_TOKEN}
 
   
