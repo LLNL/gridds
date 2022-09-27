@@ -6,7 +6,7 @@ import pandas as pd
 import os
 from torch.nn import functional
 from sklearn.preprocessing import normalize
-from gridds.utils.utils import *
+from gridds.tools.utils import *
 
 
 

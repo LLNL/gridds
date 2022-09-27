@@ -4,15 +4,17 @@ import numpy as np
 import copy
 
 class BaseModel(object):
-    """ 
-    Abstract class representing a generic GP
+    r""" 
+    Abstract class representing the base specification of a model. 
 
-    Class initialization.
-        Args
-            :attr:`name` (string):
-            the name attribute of the method.
-        TODO: add more generic args? 
+    Args:
+        :param str name: the name of the method. 
     
+    # Attributes:
+    #     :attr: `fit`: fit model to data using X (N observations x M features) and y (N observations)
+    #     :attr: `predict`: regression. Predict
+    #     :attr: `fit`:
+
     """
     __metaclass__ = ABCMeta
 
@@ -26,29 +28,28 @@ class BaseModel(object):
     #     return self.name
 
     @abstractmethod
-    def fit(self, X, y, **kwargs):
+    def fit(self, X, y=None, **kwargs):
         """ 
         Fit hyperparameters using Maximum Likelihood Estimation 
         
-        Args:
-            X (2d torch.tensor): training data in 2d array form (nsamples,nfeatures)
-            y (1d torch.tensor): training data in list form, (nsameples) for each response
+        X (2d torch.tensor): training data in 2d array form (nsamples,nfeatures)
+        y (1d torch.tensor): training data in list form, (nsameples) for each response
         """
         pass
 
     @abstractmethod
     def predict(self, X, **kwargs):
         """         
-        Args:
-            X (2d torch.tensor): training data in 2d array form (nsamples,nfeatures)
+        Args
+            :param X 2d torch.tensor: training data in 2d array form (nsamples,nfeatures)
         """
         pass
 
     @abstractmethod
     def fit_transform(self, X, **kwargs):
         """         
-        Args:
-            X (2d torch.tensor): training data in 2d array form (nsamples,nfeatures)
+        Args
+            :param X 2d torch.tensor: training data in 2d array form (nsamples,nfeatures)
         """
         pass
 

@@ -8,8 +8,20 @@ from torch.utils.data import DataLoader
 
 
 class LSTM(BaseModel):
+    """
+    
+    :param number_of_features: number of input features
+    :param hidden_dim: hidden size of the RNN
+    :param n_layers: number of layers in RNN
+    :param batch_size: batch size
+    :param seq_len: TODO: specify this better
+    :param output_size: Output dimension
+
+    """
+    USES = ['autoregression', 'fault_pred']
+
     def __init__(self, name, batch_size=10, train_iters=10, \
-    hidden_size=64, layer_dim=1, learning_rate=.2 ):
+                hidden_size=64, layer_dim=1, learning_rate=.2 ):
         super(LSTM, self).__init__(name)
         self.name = name
         # parameters
@@ -100,9 +112,18 @@ class LSTM(BaseModel):
 
 
 class LSTM_Model(torch.nn.Module):
-    '''
-    https://towardsdatascience.com/building-rnn-lstm-and-gru-for-time-series-using-pytorch-a46e5b094e7b
-    '''
+    """
+
+    LSTM wrapper around LSTM implementation `Kuguoglu 2021 <https://towardsdatascience.com/building-rnn-lstm-and-gru-for-time-series-using-pytorch-a46e5b094e7b>`_
+
+    :param number_of_features: number of input features
+    :param hidden_dim: hidden size of the RNN
+    :param n_layers: number of layers in RNN
+    :param batch_size: batch size
+    :param seq_len: TODO: specify this better
+    :param output_size: Output dimension
+
+    """
     def __init__(self, input_dim, batch_size, seq_len, layer_dim, output_dim, hidden_dim, dropout=.1):
         super(LSTM_Model, self).__init__()
 

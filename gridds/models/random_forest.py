@@ -5,6 +5,8 @@ from  sklearn.ensemble import ExtraTreesRegressor
 import numpy as np
 
 class RandomForest(BaseModel):
+    USES = ['autoregression','impute', 'fault_pred']
+
     def __init__(self, name):  # , full_name):
         """
         Class initialization.

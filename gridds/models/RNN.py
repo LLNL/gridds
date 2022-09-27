@@ -7,9 +7,20 @@ from torch.utils.data import DataLoader
 
 
 class RNN(torch.nn.Module):
-    '''
-    https://towardsdatascience.com/building-rnn-lstm-and-gru-for-time-series-using-pytorch-a46e5b094e7b
-    '''
+    """
+    
+    RNN wrapper around RNN implementation `Kuguoglu 2021 <https://towardsdatascience.com/building-rnn-lstm-and-gru-for-time-series-using-pytorch-a46e5b094e7b>`_
+    
+    :param number_of_features: number of input features
+    :param hidden_dim: hidden size of the RNN
+    :param n_layers: number of layers in RNN
+    :param batch_size: batch size
+    :param seq_len: TODO: specify this better
+    :param output_size: Output dimension
+
+    """
+    USES = ['autoregression','impute', 'fault_pred']
+
     def __init__(self, input_size, batch_size, seq_len, output_size, hidden_dim, n_layers):
         super(RNN, self).__init__()
 
@@ -43,6 +54,8 @@ class RNN(torch.nn.Module):
 
 
 class VanillaRNN(BaseModel):
+    USES = ['autoregression', 'fault_pred']
+
     def __init__(self, name, train_iters=10, num_layers=3, hidden_size=1, batch_size=5, learning_rate=.01):
         super(VanillaRNN, self).__init__(name)
         self.name = name

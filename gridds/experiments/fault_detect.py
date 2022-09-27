@@ -8,7 +8,7 @@ from gridds.viz.viz import visualize_output
 import gridds.tools.tasks as tasks
 import os
 import matplotlib.pyplot as plt
-from methods import *
+from gridds.models import *
 
 
 if __name__ == '__main__':

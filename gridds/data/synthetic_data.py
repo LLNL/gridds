@@ -3,7 +3,7 @@ import h5py
 from sklearn import preprocessing
 from scipy.stats import invwishart, multivariate_normal
 from sklearn.gaussian_process.kernels import Matern
-from data.base_dataset import Dataset
+from gridds.data.base_dataset import Dataset
 import pandas as pd
 ################################################################################
 # synthetic Data
@@ -247,7 +247,7 @@ class SyntheticData(Dataset):
         # un hardcode later
         self.test_pct = .3
         
-    def generate_data(self, n_hours, n_feats):
+    def generate_data(self, n_hours, n_feats, reader_instructions):
         # ADD more features like correlation
         """
         PSUEDO:
@@ -263,7 +263,7 @@ class SyntheticData(Dataset):
         # works only for one site
         cp_data = cp_data[0]
         # TODO: pass in column names once args are set up
-        site_data = {f'feature{i}': site_data[0,:,i]  for i in range(site_data.shape[-1])}
+        site_data = {feat_name: site_data[0,:,i]  for i, feat_name in zip(range(site_data.shape[-1]), reader_instructions['features'])}
         site_df = pd.DataFrame(site_data)
         site_df['fault_present'] = 0
         status = 0
@@ -276,15 +276,26 @@ class SyntheticData(Dataset):
     def prepare_data(self, reader_instructions):
         # hardcoded
         n_hours=2000
-        n_feats = len(reader_instructions['features'])
-        n_sites = len(reader_instructions['sources'])
+
+        # later convert this into intstruction parser
+        if type(reader_instructions['features']) == int:
+            n_feats = reader_instructions['features']
+            reader_instructions['features'] = np.arange(n_feats) # transform to list of ints for DF creation
+        elif type(reader_instructions['features']) == list:
+            n_feats = len(reader_instructions['features'])
+
+        if type(reader_instructions['sources']) == int:
+            n_sites = reader_instructions['sources']
+        elif type(reader_instructions['sources']) == str:
+            n_sites = len(reader_instructions['sources'])
+
         # MONKEY PATCH
         if n_feats < 4:
             keep_fts = n_feats
             n_feats = 4
         else:
             keep_fts = n_feats
-        self.generate_data(n_hours, n_feats)
+        self.generate_data(n_hours, n_feats, reader_instructions)
         # later do loop and irregular concatenate
         # for now we have just one site.
         self.X = self.site_dfs[0][reader_instructions['features']].values[:,:keep_fts]

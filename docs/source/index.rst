@@ -19,7 +19,6 @@ Welcome to gridds's documentation!
    database_interface
 
 
-
 Indices and tables
 ==================
 

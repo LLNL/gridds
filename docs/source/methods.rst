@@ -7,21 +7,18 @@ Methods
 
 ARIMA
 --------
-.. automodule:: gridds.methods.ARIMA
-    :show-inheritance:
+.. automodule:: gridds.methods.arima
     :members:
 
 
 KNN
 --------
 .. automodule:: gridds.methods.KNN
-    :show-inheritance:
     :members:
 
 LSTM
 --------
 .. automodule:: gridds.methods.LSTM
-    :show-inheritance:
     :members:
     
 RNN
@@ -36,10 +33,9 @@ RNN
 ..     :show-inheritance:
 ..     :members:
 
-VAE
+VRAE
 --------
-.. automodule:: gridds.methods.VAE
-    :show-inheritance:
+.. autoclass:: gridds.methods.VRAE.VRAE
     :members:
 
 .. XGBoost

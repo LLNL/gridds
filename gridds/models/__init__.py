@@ -4,12 +4,13 @@ from .arima import ARIMA
 from .RNN import VanillaRNN
 from .LSTM import LSTM
 from .LSTM_AE import LSTM_AE
-from .VAE import VRAE
+from .VRAE import VRAE
 from .lagrange import Lagrange
 from .KNN import KNN
 from .bayesian_ridge import BayesianRidge
 from .random_forest import RandomForest
 from .gaussian_process import GP
+       
 
 
 all = [ #'matrix_profile',

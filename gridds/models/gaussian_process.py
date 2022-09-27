@@ -5,6 +5,7 @@ from sklearn.gaussian_process.kernels import RBF, DotProduct, ConstantKernel, Ex
 import numpy as np
 
 class GP(BaseModel):
+    USES = ['impute']
     def __init__(self, name):  # , full_name):
         """
         Class initialization.

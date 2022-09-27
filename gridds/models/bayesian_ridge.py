@@ -26,6 +26,8 @@ class BayesianRidge(BaseModel):
     :param str name: the name attribute of the method.
 
     """
+    USES = ['autoregression', 'impute']
+
     def __init__(self, name):  # , full_name):
         self.name = name
         super(BayesianRidge, self).__init__(name)

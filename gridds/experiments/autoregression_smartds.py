@@ -6,7 +6,7 @@ from gridds.data import *
 from gridds.viz.viz import visualize_output
 import os
 import matplotlib.pyplot as plt
-from gridds.methods import *
+from gridds.models import *
 import gridds.tools.tasks as tasks
 
 
