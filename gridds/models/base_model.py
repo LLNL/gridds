@@ -18,11 +18,13 @@ class BaseModel(object):
     """
     __metaclass__ = ABCMeta
 
-    def __init__(self, name):  # , full_name):
+    def __init__(self, name, horizon=5, delay=5):  # , full_name):
+        super(BaseModel, self).__init__() #call to super again for double inheritance
         self.name = name
         self.multivariate = False
         self.loss = []
-        self.horizon = None
+        self.horizon = horizon
+        self.delay = delay
 
     # def __str__(self):
     #     return self.name

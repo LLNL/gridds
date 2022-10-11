@@ -220,8 +220,8 @@ def generate_site_data(num_sites=1000, timesteps=500,num_feats=4, irregular=Fals
     cp_data = []
     
     for site in range(num_sites):
-        if not site % 50:
-            print(site)
+        # if not site % 50:
+            # print(site)
         curr_feature, curr_cps = autocorr_transformer_data(timesteps, num_feats,correlation=correlation, interval_choice="uniform" )
         full_site_data.append(curr_feature)
         full_cp_data.append(curr_cps)

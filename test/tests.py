@@ -1,11 +1,10 @@
 import numpy as np
 import pytest
-from gridds.data import synthetic_data
+from gridds.data import synthetic_data,SmartDS as SmartDS
 from gridds import list_model_types
 import gridds.tools.tasks as tasks
 from gridds.models import ARIMA, VanillaRNN, LSTM,\
      KNN, BayesianRidge, RandomForest, VRAE, GP
-
 # content of conftest.py or a tests file (e.g. in your tests or root directory)
 
 class model_obj:
@@ -38,6 +37,22 @@ def synthetic_dataset(request):
                             'target': 'fault_present'}
     synthetic_dataset.prepare_data(reader_instructions=reader_instructions)
     return synthetic_dataset
+
+@pytest.fixture(scope="session", autouse=True)
+def smart_dataset(request):
+    smart_dataset = SmartDS('test', sites=1, normalize=False, size=2000)
+
+    reader_instructions = {
+        'sources': ['P1U'],
+        'modalities': ['load_data'],
+        'target': '',  ## how to get faults  for NREL?
+        # 'features': ['feature0','feature1', 'feature2', 'feature3']
+        'replicates': ['customers']
+    }
+
+    smart_dataset.prepare_data(reader_instructions)
+
+    return smart_dataset
 
 @pytest.fixture(scope="session", autouse=True)
 def multivar_synthetic_dataset(request):
@@ -99,57 +114,244 @@ def test_shuffle_data(synthetic_dataset):
 #     assert synthetic_dataset.X.shape[1] == 3
 #     synthetic_dataset.shuffle_and_split()
 
+######### AR TESTS ##############
 
-def test_arima_models_fit(synthetic_dataset,models):
+def test_arima_models_ar_synth(synthetic_dataset,models):
     task = tasks.default_autoregression
     model = ARIMA('name')
     model.set_autoregression_controls(task['delay'], task['horizon'])
     model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
 
-def test_KNN_models_fit(synthetic_dataset,models):
+def test_KNN_models_ar_synth(synthetic_dataset,models):
     task = tasks.default_autoregression
     model = KNN('name')
     model.set_autoregression_controls(task['delay'], task['horizon'])
     model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
 
-def test_VanillaRNN_models_fit(synthetic_dataset,models):
+def test_VanillaRNN_models_ar_synth(synthetic_dataset,models):
     task = tasks.default_autoregression
     model = VanillaRNN('name')
     model.set_autoregression_controls(task['delay'], task['horizon'])
     model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
 
-def test_LSTM_models_fit(synthetic_dataset,models):
+def test_LSTM_models_ar_synth(synthetic_dataset,models):
     task = tasks.default_autoregression
     model = LSTM('name')
     model.set_autoregression_controls(task['delay'], task['horizon'])
     model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
 
-def test_VRAE_models_fit(synthetic_dataset,models):
+def test_VRAE_models_ar_synth(synthetic_dataset,models):
     task = tasks.default_autoregression
     model = VRAE('name')
     model.set_autoregression_controls(task['delay'], task['horizon'])
     model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
 
-def test_BayesianRidge_models_fit(synthetic_dataset,models):
+def test_BayesianRidge_models_ar_synth(synthetic_dataset,models):
     task = tasks.default_autoregression
     model = BayesianRidge('name')
     model.set_autoregression_controls(task['delay'], task['horizon'])
     model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
 
 
-def test_arima_models_fit(synthetic_dataset,models):
+def test_ar_models_fit_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    for model in models.ar_models:
+        model = model('name')
+        assert hasattr(model,'fit')
+        assert hasattr(model,'predict')
+
+
+######## FAULT PRED TESTS ##############
+
+def test_KNN_models_fault_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    model = KNN('name')
+    model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+
+def test_VanillaRNN_models_fault_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    model = VanillaRNN('name')
+    model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+
+def test_LSTM_models_fault_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    model = LSTM('name')
+    model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+
+def test_VRAE_models_fault_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    model = VRAE('name')
+    model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+
+def test_BayesianRidge_models_fault_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    model = BayesianRidge('name')
+    model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+
+
+def test_models_fault_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    for model in models.fault_pred_models:
+        model = model('name')
+        assert hasattr(model,'fit')
+        assert hasattr(model,'predict')
+
+def test_RF_models_fault_synth(synthetic_dataset,models):
+    task = tasks.default_fault_pred
+    model = RandomForest('name')
+    model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+
+
+def test_KNN_models_impute_synth(synthetic_dataset,models):
+    task = tasks.default_impute
+    model = KNN('name')
+    model.fit_transform(X=synthetic_dataset.X)
+
+
+def test_BayesianRidge_models_impute_synth(synthetic_dataset,models):
+    task = tasks.default_impute
+    model = BayesianRidge('name')
+    model.fit_transform(X=synthetic_dataset.X)
+
+def test_GP_models_impute_synth(synthetic_dataset,models):
+    task = tasks.default_impute
+    model = GP('name')
+    # TODO: very inconvienent to require a kwarg to run GP
+    model.fit_transform(X=synthetic_dataset.X[:300], timestamps=synthetic_dataset.timestamps[:300])
+
+def test_RF_models_impute_synth(synthetic_dataset,models):
+    task = tasks.default_impute
+    model = RandomForest('name')
+    model.fit_transform(X=synthetic_dataset.X)
+
+
+def test_models_impute_synth(synthetic_dataset,models):
+    task = tasks.default_impute
+    for model in models.fault_pred_models:
+        model = model('name')
+        assert hasattr(model,'fit_transform')
+
+
+###########################################################################
+# NREL Data Tests
+############################################################
+
+######### AR TESTS ##############
+
+def test_arima_models_ar_smart_ds(smart_dataset,models):
     task = tasks.default_autoregression
     model = ARIMA('name')
     model.set_autoregression_controls(task['delay'], task['horizon'])
-    model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
 
-def test_ar_models_fit(synthetic_dataset,models):
+def test_KNN_models_ar_smart_ds(smart_dataset,models):
     task = tasks.default_autoregression
+    model = KNN('name')
+    model.set_autoregression_controls(task['delay'], task['horizon'])
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_VanillaRNN_models_ar_smart_ds(smart_dataset,models):
+    task = tasks.default_autoregression
+    model = VanillaRNN('name')
+    model.set_autoregression_controls(task['delay'], task['horizon'])
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_LSTM_models_ar_smart_ds(smart_dataset,models):
+    task = tasks.default_autoregression
+    model = LSTM('name')
+    model.set_autoregression_controls(task['delay'], task['horizon'])
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_VRAE_models_ar_smart_ds(smart_dataset,models):
+    task = tasks.default_autoregression
+    model = VRAE('name')
+    model.set_autoregression_controls(task['delay'], task['horizon'])
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_BayesianRidge_models_ar_smart_ds(smart_dataset,models):
+    task = tasks.default_autoregression
+    model = BayesianRidge('name')
+    model.set_autoregression_controls(task['delay'], task['horizon'])
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+
+def test_ar_models_fit_synth(smart_dataset,models):
+    task = tasks.default_fault_pred
     for model in models.ar_models:
         model = model('name')
-        model.set_autoregression_controls(task['delay'], task['horizon'])
-        model.fit(X=synthetic_dataset.X, y=synthetic_dataset.y)
+        assert hasattr(model,'fit')
+        assert hasattr(model,'predict')
 
+
+######## FAULT PRED TESTS ##############
+
+def test_KNN_models_fault_smart(smart_dataset,models):
+    task = tasks.default_fault_pred
+    model = KNN('name')
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_VanillaRNN_models_fault_smart(smart_dataset,models):
+    task = tasks.default_fault_pred
+    model = VanillaRNN('name')
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_LSTM_models_fault_smart(smart_dataset,models):
+    task = tasks.default_fault_pred
+    model = LSTM('name')
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_VRAE_models_fault_smart(smart_dataset,models):
+    task = tasks.default_fault_pred
+    model = VRAE('name')
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+def test_BayesianRidge_models_fault_smart(smart_dataset,models):
+    task = tasks.default_fault_pred
+    model = BayesianRidge('name')
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+
+def test_models_fault_smart(smart_dataset,models):
+    task = tasks.default_fault_pred
+    for model in models.fault_pred_models:
+        model = model('name')
+        assert hasattr(model,'fit')
+        assert hasattr(model,'predict')
+
+def test_RF_models_fault_smart(smart_dataset,models):
+    task = tasks.default_fault_pred
+    model = RandomForest('name')
+    model.fit(X=smart_dataset.X, y=smart_dataset.y)
+
+
+def test_KNN_models_impute_smart(smart_dataset,models):
+    task = tasks.default_impute
+    model = KNN('name')
+    model.fit_transform(X=smart_dataset.X)
+
+
+def test_BayesianRidge_models_impute_smart(smart_dataset,models):
+    task = tasks.default_impute
+    model = BayesianRidge('name')
+    model.fit_transform(X=smart_dataset.X)
+
+# def test_GP_models_impute_smart(smart_dataset,models):
+#     task = tasks.default_impute
+#     model = GP('name')
+#     # TODO: very inconvienent to require a kwarg to run GP
+#     model.fit_transform(X=smart_dataset.X[:300], timestamps=smart_dataset.timestamps[:300])
+
+def test_RF_models_impute_smart(smart_dataset,models):
+    task = tasks.default_impute
+    model = RandomForest('name')
+    model.fit_transform(X=smart_dataset.X)
+
+
+def test_models_impute_smart(smart_dataset,models):
+    task = tasks.default_impute
+    for model in models.fault_pred_models:
+        model = model('name')
+        assert hasattr(model,'fit_transform')
 
 
 # test case

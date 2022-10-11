@@ -157,7 +157,7 @@ def _assert_no_grad(tensor):
         "nn criterions don't compute the gradient w.r.t. targets - please " \
         "mark these tensors as not requiring gradients"
 
-class VRAE(nn.Module, BaseModel):
+class VRAE(BaseModel, nn.Module):
     """
     
     Variational recurrent auto-encoder. This module is used for dimensionality reduction of timeseries
@@ -188,7 +188,7 @@ class VRAE(nn.Module, BaseModel):
                  learning_rate=0.005, block='LSTM',  train_iters=5, dropout_rate=0.,
                  optimizer_name='Adam', loss_fn='MSELoss',cuda=False, print_every=100, clip=True,
                  max_grad_norm=5, dload='.'):
-        super(VRAE, self).__init__()
+        super(VRAE, self).__init__(name)
         self.name = name
         self.hidden_size = hidden_size
         self.hidden_layer_depth = hidden_layer_depth

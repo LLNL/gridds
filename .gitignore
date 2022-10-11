@@ -280,3 +280,4 @@ gridds/figures/*
 
 *private*
 *.pkl
+**outputs**

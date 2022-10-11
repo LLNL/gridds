@@ -653,6 +653,18 @@ def plot_table(df, output_path, name='result',ci=False):
     agg_df.to_latex(os.path.join(os.path.dirname(output_path), f'{name}_table.tex'), float_format="%.0f", index=False, column_format=col_fmt)
 
 
+def load_method(base_path,method, run_num):
+    if not os.path.isdir(os.path.join(base_path,method)): return 0
+    method_dir = os.path.join(base_path,method)
+    try:
+        with open(os.path.join(method_dir, f'{method}.pkl'), 'rb') as f:
+            curr_data = pickle.load(f) 
+    except FileNotFoundError:
+        print(f'no data found for {method}, at run {run_num}, skipping ')
+        return 0
+    return curr_data
+        
+
 def methods_plot_result(ax, curr_data):
     method = curr_data['method_name']
     ax.plot(curr_data['predicted'][:,0], label=method,  color=config.method_colors[method], linestyle=config.method_styles[method], linewidth=2, zorder=-10)
