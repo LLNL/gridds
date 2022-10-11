@@ -7,17 +7,19 @@ Welcome to gridds's documentation!
 ==================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    installation <install.rst>
-   examples
+   autoregression
+   autoregression_visualization
+   interpolation_visualization
+   fault_detection
    experimenter
    datasets
    tasks
-   methods
+   models
    database_interface
-
 
 
 Indices and tables

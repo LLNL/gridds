@@ -1,10 +1,12 @@
-examples
+Examples
 ==================================
 
 .. toctree::
    :glob:
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Tutorials:
    
-   Basic Examples  <simple_examples>
+   autoregression
+   interpolation
+   fault_detection
 

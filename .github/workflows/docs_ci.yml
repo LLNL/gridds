@@ -1,4 +1,4 @@
-name: basic_python_use
+name: docs
 
 on: [push]
 
@@ -24,10 +24,15 @@ jobs:
         echo "using python:" `which python3` "and version:" `python3 --version` 
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
-    - name:  test
+        python3 setup.py install
+    - name: install_pandoc
       run: |
-        echo "running tests...."
+        conda install -c conda-forge pandoc
+    - name:  docs
+      run: |
+        cd docs
+        echo "cleaning docs...."
         echo "from" `pwd`
-        echo "with" `ls`
-        python3 -m pytest  -v test/tests.py
+        make clean
+        make html
   

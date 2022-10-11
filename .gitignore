@@ -273,6 +273,11 @@ tags
 .data_backup
 .old_data
 *.png
-tools/private.py
+gridds/tools/private.py
+gridds/outputs/*
+gridds/nbs/*
+gridds/figures/*
+
 *private*
 *.pkl
+**outputs**
