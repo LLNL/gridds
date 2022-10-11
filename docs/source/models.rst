@@ -23,13 +23,13 @@ LSTM
     
 RNN
 --------
-.. automodule:: gridds.methods.RNN
+.. automodule:: gridds.models.RNN
     :show-inheritance:
     :members:
     
 .. DDCRF
 .. --------
-.. .. automodule:: gridds.methods.ddcrf
+.. .. automodule:: gridds.models.ddcrf
 ..     :show-inheritance:
 ..     :members:
 
@@ -40,6 +40,6 @@ VRAE
 
 .. XGBoost
 .. ---------
-.. .. automodule:: gridds.methods.XGBoost
+.. .. automodule:: gridds.models.XGBoost
 ..     :show-inheritance:
 ..     :members:
