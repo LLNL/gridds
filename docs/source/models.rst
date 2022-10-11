@@ -1,24 +1,24 @@
-Methods
+Models
 ==================================
 
-.. automodule:: gridds.methods.base_model
+.. automodule:: gridds.models.base_model
     :show-inheritance:
     :members:
 
 ARIMA
 --------
-.. automodule:: gridds.methods.arima
+.. automodule:: gridds.models.arima
     :members:
 
 
 KNN
 --------
-.. automodule:: gridds.methods.KNN
+.. automodule:: gridds.models.KNN
     :members:
 
 LSTM
 --------
-.. automodule:: gridds.methods.LSTM
+.. automodule:: gridds.models.LSTM
     :members:
     
 RNN
@@ -35,7 +35,7 @@ RNN
 
 VRAE
 --------
-.. autoclass:: gridds.methods.VRAE.VRAE
+.. autoclass:: gridds.models.VRAE.VRAE
     :members:
 
 .. XGBoost
