@@ -2,7 +2,7 @@
 
 [![Python Package using Conda](https://github.com/LLNL/gridds/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/LLNL/gridds/actions/workflows/python-package-conda.yml) 
 [![Documentation Status](https://readthedocs.org/projects/gridds/badge/?version=latest)](https://gridds.readthedocs.io/en/latest/?badge=latest)
-
+[![codecov](https://codecov.io/gh/LLNL/gridds/branch/public_091422/graph/badge.svg?token=912YRWCMVZ)](https://codecov.io/gh/LLNL/gridds)
 
 Author(s): Alexander Ladd & Indrasis Chakraborty
 
@@ -37,87 +37,87 @@ in Longitudinal Energy Data](https://dl.acm.org/doi/pdf/10.1145/3447555.3466588)
 ├── RNN_univariate_nrel.db
 ├── __init__.py
 ├── data
-│   ├── __init__.py
-│   ├── archive
-│   ├── base_dataset.py
-│   ├── cleaners.py
-│   ├── csvs
-│   ├── db_interface.py
-│   ├── install_nrel.sh
-│   ├── nrel_smart_ds
-│   ├── nrel_smart_ds.py
-│   ├── nrel_smart_ds_real
-│   ├── saved_datasets
-│   └── synthetic_data.py
+│   ├── __init__.py
+│   ├── archive
+│   ├── base_dataset.py
+│   ├── cleaners.py
+│   ├── csvs
+│   ├── db_interface.py
+│   ├── install_nrel.sh
+│   ├── nrel_smart_ds
+│   ├── nrel_smart_ds.py
+│   ├── nrel_smart_ds_real
+│   ├── saved_datasets
+│   └── synthetic_data.py
 ├── data_specification.py
 ├── docs
-│   ├── Makefile
-│   ├── build
-│   ├── make.bat
-│   └── source
+│   ├── Makefile
+│   ├── build
+│   ├── make.bat
+│   └── source
 ├── examples
-│   └── simple_autoregression.ipynb
-│   └── simple_forecasting.ipynb
-│   └── simple_interpolation.ipynb
+│   └── simple_autoregression.ipynb
+│   └── simple_forecasting.ipynb
+│   └── simple_interpolation.ipynb
 ├── experimenter.py
 ├── experiments
-│   ├── add_faults.py
-│   ├── amlies22
-│   ├── ar.sh
-│   ├── archive
-│   ├── autoregression_basic.py
-│   ├── autoregression_basic_clean.py
-│   ├── clean_data.py
-│   ├── clean_data_clean copy.py
-│   ├── clean_data_clean.py
-│   ├── composite_experiment.py
-│   ├── ingest_data.py
-│   ├── ingest_nreca_data.py
-│   ├── interpolate_forecast.py
-│   ├── launch.sh
-│   ├── launch_reponse.sh
-│   ├── read_data.py
-│   ├── read_data_scada.py
-│   ├── read_data_scada_clean.py
-│   ├── scada_interpolate.py
-│   ├── tune_hyperparams.py
-│   └── visualize.py
+│   ├── add_faults.py
+│   ├── amlies22
+│   ├── ar.sh
+│   ├── archive
+│   ├── autoregression_basic.py
+│   ├── autoregression_basic_clean.py
+│   ├── clean_data.py
+│   ├── clean_data_clean copy.py
+│   ├── clean_data_clean.py
+│   ├── composite_experiment.py
+│   ├── ingest_data.py
+│   ├── ingest_nreca_data.py
+│   ├── interpolate_forecast.py
+│   ├── launch.sh
+│   ├── launch_reponse.sh
+│   ├── read_data.py
+│   ├── read_data_scada.py
+│   ├── read_data_scada_clean.py
+│   ├── scada_interpolate.py
+│   ├── tune_hyperparams.py
+│   └── visualize.py
 ├── figures
 ├── hparams.md
 ├── ingest_data.sh
 ├── methods
-│   ├── KNN.py
-│   ├── LSTM.py
-│   ├── LSTM_AE.py
-│   ├── RNN.py
-│   ├── VAE.py
-│   ├── XGBoost.py
-│   ├── __init__.py
-│   ├── __pycache__
-│   ├── arima.py
-│   ├── base_model.py
-│   ├── bayesian_ridge.py
-│   ├── ddcrf.py
-│   ├── gaussian_process.py
-│   ├── lagrange.py
-│   ├── matrix_profile.py
-│   └── random_forest.py
+│   ├── KNN.py
+│   ├── LSTM.py
+│   ├── LSTM_AE.py
+│   ├── RNN.py
+│   ├── VAE.py
+│   ├── XGBoost.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── arima.py
+│   ├── base_model.py
+│   ├── bayesian_ridge.py
+│   ├── ddcrf.py
+│   ├── gaussian_process.py
+│   ├── lagrange.py
+│   ├── matrix_profile.py
+│   └── random_forest.py
 ├── requirements.txt
 ├── setup.py
 ├── sql
-│   ├── __pycache__
-│   ├── ami.sql
-│   ├── ami_blink.sql
-│   ├── archive
-│   ├── drop_tables.sql
-│   ├── gis.sql
-│   ├── ingest.py
-│   ├── notes.md
-│   ├── oms.sql
-│   ├── query_scratchpad.txt
-│   └── scada.sql
+│   ├── __pycache__
+│   ├── ami.sql
+│   ├── ami_blink.sql
+│   ├── archive
+│   ├── drop_tables.sql
+│   ├── gis.sql
+│   ├── ingest.py
+│   ├── notes.md
+│   ├── oms.sql
+│   ├── query_scratchpad.txt
+│   └── scada.sql
 ├── test
-│   └── tests.py
+│   └── tests.py
 └── tools
     ├── __pycache__
     ├── config.py
