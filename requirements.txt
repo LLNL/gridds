@@ -130,6 +130,8 @@ sphinxcontrib-htmlhelp==2.0.0
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
+sphinx-autodoc-typehints
+sphinx_rtd_theme
 statsmodels
 stringcase==1.2.0
 tenacity==8.0.1
