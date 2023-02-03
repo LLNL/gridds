@@ -61,8 +61,6 @@ in Longitudinal Energy Data](https://dl.acm.org/doi/pdf/10.1145/3447555.3466588)
 │   └── simple_interpolation.ipynb
 ├── experimenter.py
 ├── experiments
-│   ├── add_faults.py
-│   ├── amlies22
 │   ├── ar.sh
 │   ├── archive
 │   ├── autoregression_basic.py
@@ -72,7 +70,6 @@ in Longitudinal Energy Data](https://dl.acm.org/doi/pdf/10.1145/3447555.3466588)
 │   ├── clean_data_clean.py
 │   ├── composite_experiment.py
 │   ├── ingest_data.py
-│   ├── ingest_nreca_data.py
 │   ├── interpolate_forecast.py
 │   ├── launch.sh
 │   ├── launch_reponse.sh
@@ -109,12 +106,10 @@ in Longitudinal Energy Data](https://dl.acm.org/doi/pdf/10.1145/3447555.3466588)
 │   ├── ami.sql
 │   ├── ami_blink.sql
 │   ├── archive
-│   ├── drop_tables.sql
 │   ├── gis.sql
 │   ├── ingest.py
 │   ├── notes.md
 │   ├── oms.sql
-│   ├── query_scratchpad.txt
 │   └── scada.sql
 ├── test
 │   └── tests.py
